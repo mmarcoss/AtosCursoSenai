@@ -9,9 +9,7 @@ div {
     width: 100%;
     height: 50%;
 }
-.btn{
 
-}
 .header{
     width: 100%;
     height: 100vh;
@@ -20,4 +18,54 @@ div {
     align-items: center;
     text-align: center;
     position: relative;
+    overflow-x: hidden;
+}
+.header::before{
+    content: "";
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(rgba(54,156,243,0,28)),
+        to(rgba(3,36,98,0,28))),
+        url(../img/desenvolvimento.jpg);
+    background: url(../img/desenvolvimento.jpg);
+    background-size: cover;
+    filter: blur(1px)contrast(70%);
+    
+}
+
+.header-info{
+    position: absolute;
+    font-size: 20px;
+    color: black;
+    text-shadow: 10px 3px 25px rgba(15,15,15,1);
+
+}
+.btn{
+    border: 2px solid #000;
+    width: 10em;
+    height: 2.4em;
+    font-family: 'Slabo 27px', serif;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: rgb(143, 201, 162);
+    font-size: 16px;
+    transition-property: border, background-color;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+
+
+}
+.btn:hover{
+border-width: 4px;
+background-color: transparent;
+}
+a{
+    text-decoration: none;
+    color:rgb(59, 59, 59);
 }
