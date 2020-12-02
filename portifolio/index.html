@@ -17,13 +17,13 @@
             <h1>Marcos Costi</h1><br>
             <h4>Desenvolvimento e suporte de Sites</h4>
             <button type="button" class="btn">
-                <a href="#">Minhas experiencias</a>
+                <a href="#experience"> Experiencias</a>
             </button>
         </div>
     </header>
-    <section class="section experience-sec">
+    <section id="experience" class="section experience-sec">
         <div class="section-header">Linguagem e Frameworks</div>
-        <div class="experience-conteiner"> 
+        <div class="experience-container"> 
             <div class="experience-item">
                 <span class="item-logo">
                 <img src="./img/html-5.svg" alt="imagem_html5">
@@ -32,17 +32,58 @@
             </div>
             <div class="experience-item">
                 <span class="item-logo">
-                <img src="./img/css.svg">
+                <img src="./img/css-3.svg" alt="imagem_CSS3">
             </span>
             <span class="item-name">CSS3</span>
             </div>
             <div class="experience-item">
                 <span class="item-logo">
-                <img src="./img/javascript.svg">
+                <img src="./img/javascript.svg" alt="imagem_javascript">
             </span>
             <span class="item-name">JavaScipt</span>
             </div>
         </div>
+
+        <div class="experience-container"> 
+            <div class="experience-item">
+                <span class="item-logo">
+                <img src="./img/asp.svg" alt="imagem_asp">
+            </span>
+            <span class="item-name">ASP</span>
+            </div>
+            <div class="experience-item">
+                <span class="item-logo">
+                <img src="./img/php.svg" alt="imagem_php">
+            </span>
+            <span class="item-name">PHP</span>
+            </div>
+            <div class="experience-item">
+                <span class="item-logo">
+                <img src="./img/hashtag.svg" alt="imagem_java">
+            </span>
+            <span class="item-name">.NET</span>
+            </div>
+        </div>
+
+
+
+    </section>
+    <section class="section contact-sec">
+        <div class="section-header">Contato</div>
+        <div class="contact-container">
+            <form id="contact-form">
+                <label for="name">Nome</label>
+                <input type="text" name="name">
+
+                <label for="email">E-mail</label>
+                <input type="email" name="email">
+
+                <label for="content">Mensagem</label>
+                <textarea name="content" id="content" placeholder="Digite seu texto..."></textarea>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </div>
+
     </section>
 </body>
 </html>
