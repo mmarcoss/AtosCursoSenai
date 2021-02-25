@@ -1,0 +1,9 @@
+@media(min-width:768px){
+    #container-page-sidebar{
+        padding-left: 250px;
+    }
+    #page-content{
+        padding: 20px;
+        position: relative;
+    }
+}

@@ -1,0 +1,69 @@
+<div *ngIf="selectedMedico">
+  <app-title [titleVar]="titlemedico+ ': ' + selectedMedico.id"></app-title>
+  <form [formGroup]="medicoForm" (submit)="submit()">
+    <div class="form-group">
+      <label for="formGroupExampleInput" class="form-label">Nome</label>
+      <input type="text" formControlName="nome" class="form-control" id="formGroupExampleInput" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2" class="form-label">CRM</label>
+      <input type="number" formControlName="crm" class="form-control" id="formGroupExampleInput2" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput" class="form-label">Especialidade</label>
+      <input type="text" formControlName="especialidades" class="form-control" id="formGroupExampleInput"
+        placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2" class="form-label">Telefone</label>
+      <input type="text" formControlName="telefone" class="form-control" id="formGroupExampleInput2" placeholder="">
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-warning" (click)="back()">Voltar</button>
+      <button class="btn btn-success" (click)="submit()">Salvar</button>
+    </div>
+  </form>
+</div>
+<div *ngIf="!selectedMedico">
+  <app-title [titleVar]="titlemedico"></app-title>
+  <p>Nenhum médico selecionado.</p>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Especialização</th>
+        <th scope="col">CRM</th>
+        <th scope="col">Telefona</th>
+        <th scope="col">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let medico of medicos">
+        <th scope="row">{{medico.id}}</th>
+        <td>{{medico.nome}}</td>
+        <td>{{medico.especialidades}}</td>
+        <td>{{medico.crm}}</td>
+        <td>{{medico.telefone}}</td>
+        <td>
+          <div class="btn-group">
+            <button class="btn btn-primary" (click)="openModal(template)">Visualizar</button>
+            <button class="btn btn-secondary" (click)="selectMedico(medico)">Editar</button>
+            <button class="btn btn-danger" (click)="deleteMedico(medico.id)">Excluir</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>
